@@ -1,0 +1,103 @@
+body {
+  background-color: #a7bcb9;
+  color: #41506b;
+  font-family: "JetBrains Mono", monospace;
+}
+
+div {
+  background-color: #a7bcb9;
+}
+
+footer {
+  color: #4c5d7a;
+  text-align: center;
+  font-size: 12px;
+}
+
+ul {
+  padding: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.array {
+  background-color: #e3f6f5;
+}
+
+.search-button {
+  background-color: #e3f6f5;
+}
+
+.current-weather {
+  list-style: none;
+}
+
+#day-week {
+  list-style: none;
+  display: inline;
+}
+.current-city {
+  font-weight: bold;
+}
+
+.current-degrees {
+  font-size: 35px;
+}
+
+.fa-regular.fa-sun.first {
+  color: #fde933;
+  font-size: 150px;
+  margin: 0 auto;
+}
+
+.row {
+  text-align: center;
+  background-color: white;
+}
+
+.col {
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.tomorrow {
+  border-right: 2px solid #41506b;
+  height: 96px;
+}
+
+.fa-solid.fa-cloud {
+  color: rgb(12, 72, 202);
+  font-size: 50px;
+}
+
+.day-after-tomorrow {
+  display: block;
+  border-right: 2px solid #41506b;
+  height: 96px;
+}
+
+.fa-solid.fa-cloud-rain {
+  color: rgb(30, 99, 247);
+  font-size: 50px;
+}
+
+.in-three-days {
+  border-right: 2px solid #41506b;
+  height: 96px;
+}
+
+.in-four-days {
+  border-right: 2px solid #41506b;
+  height: 96px;
+}
+
+.fa-regular.fa-sun {
+  color: #fde933;
+  font-size: 50px;
+}
+
+.in-five-days {
+}

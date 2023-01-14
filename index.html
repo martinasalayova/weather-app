@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather in your city 🌡</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/6ec719e652.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <form id="search-form">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a city..."
+          autocomplete="off"
+          autofocus="on"
+        />
+        <input type="submit" id="search-button" value="Search" />
+        <button id="current-location-button">Your current location</button>
+      </form>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <ul class="current-weather">
+              <li class="current-city">Hradec Kralove</li>
+              <li class="current-degrees">
+                <span id="temperature">17</span>
+                <span class="units">
+                  <a href="#" id="celsius">°C</a>
+                  <a href="#" id="fahr">°F</a>
+                </span>
+              </li>
+              <li class="current-day" id="day-week">Saturday</li>
+              <li class="current-time-forecast">15:30</li>
+              <li class="current-forecast">Sunny</li>
+            </ul>
+          </div>
+          <div class="col">
+            <i class="fa-regular fa-sun first"></i>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="row different">
+        <div class="col line">
+          <ul class="tomorrow">
+            <i class="fa-solid fa-cloud"></i>
+            <div class="tomorrow-degrees">13 °C</div>
+            <div class="tomorrow-day-forecast">
+              <strong>Sunday</strong> / Cloudy
+            </div>
+          </ul>
+        </div>
+        <div class="col line">
+          <ul class="day-after-tomorrow">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <div class="day-after-tomorrow-degrees">11 °C</div>
+            <div class="day-after-tomorrow-day-forecast">
+              <strong>Monday</strong> / Rain
+            </div>
+          </ul>
+        </div>
+        <div class="col line">
+          <ul class="in-three-days">
+            <i class="fa-solid fa-cloud"></i>
+            <div class="in-three-days-degrees">14 °C</div>
+            <div class="in-three-days-day-forecast">
+              <strong>Tuesday</strong> / Cloudy
+            </div>
+          </ul>
+        </div>
+        <div class="col line">
+          <ul class="in-four-days">
+            <i class="fa-regular fa-sun"></i>
+            <div class="in-four-days-degrees">17 °C</div>
+            <div class="in-four-days-day-forecast">
+              <strong>Wednesday</strong> / Sunny
+            </div>
+          </ul>
+        </div>
+        <div class="col line">
+          <ul class="in-five-days">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <div class="in-five-days-degrees">11 °C</div>
+            <div class="in-five-days-day-forecast">
+              <strong>Monday</strong> / Rain
+            </div>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <br />
+      <footer>Coded by Martina Salayová</footer>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
