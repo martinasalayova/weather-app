@@ -101,3 +101,8 @@ a {
 
 .in-five-days {
 }
+
+.github-link {
+  text-decoration: none;
+  font-size: 12px;
+}
