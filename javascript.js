@@ -109,3 +109,11 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 time.innerHTML = `${hours}:${minutes}`;
+function defaultTemp() {
+  let apiKey = "ab8a5768a15f9a84dce115b22d102c9d";
+  let units = "metric";
+  let city = `Hradec Kralove`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(weather);
+}
+defaultTemp();
