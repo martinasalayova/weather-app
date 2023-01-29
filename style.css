@@ -39,6 +39,15 @@ li:first-letter {
   list-style: none;
 }
 
+.weather-temperature-deck .active {
+  color: #41506b;
+  cursor: default;
+}
+
+.weather-temperature-deck .active:hover {
+  text-decoration: none;
+}
+
 #day-week {
   list-style: none;
   display: inline;

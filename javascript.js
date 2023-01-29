@@ -47,6 +47,7 @@ function weather(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = `${currentTemp}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -139,8 +140,10 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitACity);
 
 function toCelsius() {
+  celsius.classList.add("active");
+  fahr.classList.remove("active");
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = `17`;
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsius = document.querySelector("#celsius");
@@ -150,9 +153,13 @@ celsius.addEventListener("click", toCelsius);
 
 function toFahr() {
   let fahrTemp = document.querySelector("#temperature");
-  let convert = Math.round((fahrTemp.innerHTML * 9) / 5 + 32);
+  celsius.classList.remove("active");
+  fahr.classList.add("active");
+  let convert = Math.round((celsiusTemperature * 9) / 5 + 32);
   fahrTemp.innerHTML = `${convert}`;
 }
+
+let celsiusTemperature = null;
 
 fahr.addEventListener("click", toFahr);
 
