@@ -6,7 +6,7 @@ function submitACity(event) {
   if (searchInput.value) {
     currentCity.innerHTML = `${searchInput.value}`;
   } else {
-    currentCity.innerHTML = `Hradec Králové`;
+    currentCity.innerHTML = `Hradec Kralove`;
   }
   let apiKey = "ab8a5768a15f9a84dce115b22d102c9d";
   let units = "metric";
@@ -16,10 +16,41 @@ function submitACity(event) {
   axios.get(apiUrl).then(weather);
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let daysElement = days[date.getDay()];
+  return `${daysElement} ${hours}:${minutes}`;
+}
+
 function weather(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = `${currentTemp}`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function receiveCurrentLocation() {
@@ -27,16 +58,48 @@ function receiveCurrentLocation() {
 }
 
 function showPosition(position) {
+  position.preventDefault();
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "ab8a5768a15f9a84dce115b22d102c9d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+function formatGeoDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let daysElement = days[date.getDay()];
+  return `${daysElement} ${hours}:${minutes}`;
+}
+
 function showTemperature(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   temperatureElement.innerHTML = `${currentTemp}`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatGeoDate(response.data.dt * 1000);
 }
 
 let submitCurrentLocation = document.querySelector("#current-location-button");
@@ -55,7 +118,6 @@ function showCityPosition(position) {
 }
 
 function showCityByGeoLocation(response) {
-  console.log(response);
   let currentCity = document.querySelector(".current-city");
   currentCity.innerHTML = response.data[0].name;
 }
@@ -83,32 +145,28 @@ function toFahr() {
 
 fahr.addEventListener("click", toFahr);
 
-let now = new Date();
-let dayWeek = document.querySelector("#day-week");
-console.log(dayWeek);
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-dayWeek.innerHTML = `${day}`;
+// let now = new Date();
+// let dayElement = document.querySelector("#date");
+// let days = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+// ];
+// let daysElement = days[now.getDay()];
+// let hours = now.getHours();
+// let minutes = now.getMinutes();
+// if (hours < 10) {
+//   hours = `0${hours}`;
+// }
+// if (minutes < 10) {
+//   minutes = `0${minutes}`;
+// }
+// dayElement.innerHTML = `${daysElement} ${hours}:${minutes}`;
 
-let time = document.querySelector(".current-time-forecast");
-console.log(time);
-let hours = now.getHours();
-let minutes = now.getMinutes();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-time.innerHTML = `${hours}:${minutes}`;
 function defaultTemp() {
   let apiKey = "ab8a5768a15f9a84dce115b22d102c9d";
   let units = "metric";
