@@ -39,6 +39,34 @@ function formatDate(timestamp) {
   return `${daysElement} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+            <div class="tomorrow-day-date">${day}</div>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="clear"
+              class="icon-class"
+              id="tomorrow-icon"
+            />
+            <div class="tomorrow-degrees">
+              <span class="tomorow-degrees-max">18 °C</span>
+              <span class="tomorow-degrees-min">12 °C</span>
+              <div class="tomorrow-day-forecast">Cloudy</div>
+            </div>
+          </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function weather(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
@@ -193,3 +221,4 @@ function defaultTemp() {
   axios.get(apiUrl).then(weather);
 }
 defaultTemp();
+displayForecast();
