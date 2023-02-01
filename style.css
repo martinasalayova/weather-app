@@ -14,10 +14,6 @@ footer {
   font-size: 12px;
 }
 
-ul {
-  padding: 0 auto;
-}
-
 a {
   text-decoration: none;
   font-size: 25px;
@@ -48,22 +44,12 @@ li:first-letter {
   text-decoration: none;
 }
 
-#day-week {
-  list-style: none;
-  display: inline;
-}
 .current-city {
   font-weight: bold;
 }
 
 .current-degrees {
   font-size: 35px;
-}
-
-.fa-regular.fa-sun.first {
-  color: #fde933;
-  font-size: 150px;
-  margin: 0 auto;
 }
 
 .row {
@@ -81,38 +67,14 @@ li:first-letter {
   height: 96px;
 }
 
-.fa-solid.fa-cloud {
-  color: rgb(12, 72, 202);
-  font-size: 50px;
-}
-
 .day-after-tomorrow {
   display: block;
   border-right: 2px solid #41506b;
   height: 96px;
 }
-
-.fa-solid.fa-cloud-rain {
-  color: rgb(30, 99, 247);
-  font-size: 50px;
-}
-
-.in-three-days {
-  border-right: 2px solid #41506b;
-  height: 96px;
-}
-
-.in-four-days {
-  border-right: 2px solid #41506b;
-  height: 96px;
-}
-
 .icon {
   color: #fde933;
   font-size: 50px;
-}
-
-.in-five-days {
 }
 
 .github-link {
