@@ -23,6 +23,10 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+.tomorrow-day-forecast:first-letter {
+  text-transform: capitalize;
+}
+
 .array {
   background-color: #e3f6f5;
 }
