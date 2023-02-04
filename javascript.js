@@ -57,13 +57,16 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row g-0">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col">
-            <div class="tomorrow-day-date">${formatDay(forecastDay.dt)}</div>
+        `<div class="col-sm">
+        
+            <div class="tomorrow-day-date"><strong>${formatDay(
+              forecastDay.dt
+            )}</strong></div>
             <img
               src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
@@ -73,15 +76,15 @@ function displayForecast(response) {
               id="tomorrow-icon"
             />
             <div class="tomorrow-degrees">
-              <span class="tomorow-degrees-max">${Math.round(
+              <span class="tomorow-degrees-max"><strong>${Math.round(
                 forecastDay.temp.max
-              )}°C</span>
+              )}°C</strong></span>
               <span class="tomorow-degrees-min">${Math.round(
                 forecastDay.temp.min
               )}°C</span>
-              <div class="tomorrow-day-forecast">${
+              <div class="tomorrow-day-forecast"><em>${
                 forecastDay.weather[0].description
-              }</div>
+              }</em></div>
             </div>
           </div>
         `;
@@ -222,28 +225,6 @@ function toFahr() {
 let celsiusTemperature = null;
 
 fahr.addEventListener("click", toFahr);
-
-// let now = new Date();
-// let dayElement = document.querySelector("#date");
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// let daysElement = days[now.getDay()];
-// let hours = now.getHours();
-// let minutes = now.getMinutes();
-// if (hours < 10) {
-//   hours = `0${hours}`;
-// }
-// if (minutes < 10) {
-//   minutes = `0${minutes}`;
-// }
-// dayElement.innerHTML = `${daysElement} ${hours}:${minutes}`;
 
 function defaultTemp() {
   let apiKey = "ab8a5768a15f9a84dce115b22d102c9d";

@@ -31,69 +31,84 @@
   </head>
   <body>
     <div class="container">
-      <br />
-      <form id="search-form">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search for a city..."
-          autocomplete="off"
-          autofocus="on"
-        />
-        <input type="submit" id="search-button" value="Search" />
-        <button id="current-location-button">Your current location</button>
-      </form>
-      <br />
-      <br />
-      <br />
-      <br />
+      <div class="weather-app">
+        <br />
+        <form id="search-form">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a city..."
+            autocomplete="off"
+            autofocus="on"
+          />
+          <input
+            type="submit"
+            id="search-button"
+            value="Search"
+            autofocus="on"
+          />
+          <button id="current-location-button" autofocus="on">
+            Your current location
+          </button>
+        </form>
+        <br />
+        <br />
+        <br />
+        <br />
 
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            <div class="weather-temperature-deck">
-              <ul class="current-weather">
-                <li class="current-city">Hradec Králové</li>
-                <li class="current-degrees">
-                  <span id="temperature">17</span>
-                  <span class="units">
-                    <a href="#" id="celsius" class="active">°C</a>
-                    <a href="#" id="fahr">°F</a>
-                  </span>
-                </li>
-                <li class="updated-date">
-                  Last updated: <span id="date"></span>
-                </li>
-                <br />
-                <li class="current-forecast">
-                  <span id="description">Sunny</span>
-                </li>
-                <li class="current-humidity">
-                  Humidity: <span id="humidity"></span>%
-                </li>
-                <li class="current-wind">Wind: <span id="wind"></span> Km/h</li>
-              </ul>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <div class="weather-temperature-deck">
+                <ul class="current-weather">
+                  <li class="current-city">Hradec Králové</li>
+                  <li class="current-degrees">
+                    <span id="temperature" class="temperature">17</span>
+                    <span class="units">
+                      <a href="#" id="celsius" class="active">°C</a>
+                      <a href="#" id="fahr">°F</a>
+                    </span>
+                  </li>
+
+                  <li class="updated-date">
+                    Last updated: <span id="date"></span>
+                  </li>
+                  <br />
+                  <div class="information">
+                    <em>
+                      <li class="current-forecast">
+                        <span id="description">Sunny</span>
+                      </li>
+                      <li class="current-humidity">
+                        Humidity: <span id="humidity"></span>%
+                      </li>
+                      <li class="current-wind">
+                        Wind: <span id="wind"></span> Km/h
+                      </li>
+                    </em>
+                  </div>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="clear"
+                class="icon-class-top"
+                id="icon"
+              />
             </div>
           </div>
-          <div class="col">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="clear"
-              class="icon-class"
-              id="icon"
-            />
-          </div>
         </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="weather-forecast" id="weather-forecast"></div>
+
+        <br />
       </div>
-
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <div class="weather-forecast" id="weather-forecast"></div>
-
-      <br />
       <br />
       <footer>
         Coded by Martina Salayová -

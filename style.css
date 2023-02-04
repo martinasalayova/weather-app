@@ -2,10 +2,12 @@ body {
   background-color: #a7bcb9;
   color: #41506b;
   font-family: "JetBrains Mono", monospace;
-}
-
-div {
-  background-color: #a7bcb9;
+  background: linear-gradient(
+    90deg,
+    rgba(215, 179, 252, 1) 13%,
+    rgba(173, 216, 250, 1) 54%,
+    rgba(201, 249, 210, 1) 91%
+  );
 }
 
 footer {
@@ -23,12 +25,31 @@ li:first-letter {
   text-transform: capitalize;
 }
 
-.tomorrow-day-forecast:first-letter {
-  text-transform: capitalize;
+button {
+  border: #616166 solid 1px;
+  border-radius: 3px;
 }
 
-.array {
-  background-color: #e3f6f5;
+#search-form {
+  padding-left: 22px;
+}
+
+.weather-app {
+  border: #41506b solid 2px;
+  border-style: ridge;
+  border-radius: 6px;
+  margin-top: 30px;
+  max-width: 100%;
+  background-color: #c1c1ed;
+}
+
+.col-sm {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.tomorrow-day-forecast:first-letter {
+  text-transform: capitalize;
 }
 
 .search-button {
@@ -50,15 +71,32 @@ li:first-letter {
 
 .current-city {
   font-weight: bold;
+  font-size: 28px;
+  color: #444b60;
+}
+
+.temperature {
+  font-size: 55px;
+}
+
+.information {
+  font-size: 16px;
+}
+
+#date {
+  font-size: 18px;
 }
 
 .current-degrees {
   font-size: 35px;
 }
 
+img.icon-class-top {
+  width: 135px;
+}
+
 .row {
   text-align: center;
-  background-color: white;
 }
 
 .col {
@@ -84,4 +122,12 @@ li:first-letter {
 .github-link {
   text-decoration: none;
   font-size: 12px;
+}
+
+.tomorow-degrees-max {
+  font-size: 20px;
+}
+
+.tomorrow-day-forecast {
+  font-size: 16px;
 }
